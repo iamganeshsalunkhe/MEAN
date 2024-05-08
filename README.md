@@ -1,1 +1,1 @@
-# MEAN
+# MEAN(MySQL,Express, Angular, Node)
