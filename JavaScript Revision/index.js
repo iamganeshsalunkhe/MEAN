@@ -113,4 +113,28 @@ for (let index = 0; index < numbers.length; index++) {
     const element = numbers[index];
     console.log(element);
 }
+console.log(`-----------------------------------------------------------`);
+// Arrow Function
+const square = (num) => console.log(num * num)
 
+square(25)
+
+
+
+function add(a){
+    function add2 (b){
+        console.log(a+b);
+    }
+    add2(3)
+}
+add(3)
+
+
+function Greet(name){
+    function message(){
+        console.log(`Hello My Friend ${name}`);
+    }
+    message()
+}
+Greet('Ganesh')
+Greet("Pratik")
