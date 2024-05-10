@@ -11,7 +11,7 @@ const person2 = {
     }
 }
 
-// person2.canVote()
+person2.canVote()
 
 
 
@@ -38,3 +38,23 @@ const mobile1 = new  mobile('11R', 'Oneplus')
 const mobile2 = new mobile('S21FE', 'Samsung')
 console.log(mobile1);
 console.log(mobile2);
+console.log(`--------------------------------------------------`);
+// Using JSOn
+
+const person6 ={
+    name:'Ganesh',
+    age:24,
+    address:'Sangli',
+    Qualification:'Engineer Graduate',
+
+}
+
+function person(name, address, age){
+    this.name =name
+    this.address = address
+    this.age  = age
+}
+
+const newperson = new person('Ganesh','Sangli', 25)
+console.log(newperson);
+console.log(`${newperson}`); 
