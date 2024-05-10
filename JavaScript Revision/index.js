@@ -138,3 +138,65 @@ function Greet(name){
 }
 Greet('Ganesh')
 Greet("Pratik")
+
+
+// map (higher Order Function)
+
+numbers = [1,2,3,4,5,6,7,8,9]
+
+const squareofnumbers = numbers.map(i=> i*i)
+
+console.log(squareofnumbers);
+
+
+
+const cubeofnumbers =  numbers.map(i=>i*i*i)
+
+console.log(cubeofnumbers);
+
+function function6(){
+    const cars = [
+        {id:1,name:'Baleno',company :'MS',Price:9.5},
+        {id:2,name:'Creta',company :'Hyndai',Price:15.5},
+        {id:3,name:'Nexon',company :'Tata',Price:8.5},
+        {id:4,name:'Ertiga',company :'MS',Price:10.5}
+    ]
+
+    cars.map(i => console.log(i.company, i.name))
+    
+}
+
+
+function6()
+
+// Filter (Higher Order Functions)
+
+
+function function7(){
+    const number = [1,2,3,4,5,6,7,8,9,10]
+
+    const evennumbers =number.filter(i=>i%2 == 0)
+    console.log(evennumbers);
+
+    const oddnumbers = number.filter(i => i % 2 != 0)
+    console.log(oddnumbers);
+}
+
+function7()
+
+
+// chaining of map, filter
+
+function function8(){
+    const cars = [
+    { id: 1, name: "Baleno", company: "MS", Price: 9.5 },
+    { id: 2, name: "Creta", company: "Hyndai", Price: 15.5 },
+    { id: 3, name: "Nexon", company: "Tata", Price: 8.5 },
+    { id: 4, name: "Ertiga", company: "MS", Price: 10.5 },
+    ]
+    const chaining = cars.filter(i =>i.Price < 10).map(i=> [i.company,i.name])
+
+    console.log(chaining);
+}
+function8()
+
