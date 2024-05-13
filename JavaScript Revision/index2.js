@@ -13,8 +13,6 @@ const person2 = {
 
 person2.canVote()
 
-
-
 // how to make Object
 
 const person1 = new Object()
@@ -22,7 +20,6 @@ console.log(person1);
 person1.name = 'Person1'
 person1.age = 26
 person1.address ='VIZAG'
-
 
 console.log(person1);
 
@@ -45,16 +42,21 @@ const person6 ={
     name:'Ganesh',
     age:24,
     address:'Sangli',
-    Qualification:'Engineer Graduate',
-
+    Qualification:'Engineer Graduate'
 }
 
-function person(name, address, age){
+function person10(name, address, age){
     this.name =name
     this.address = address
     this.age  = age
 }
 
-const newperson = new person('Ganesh','Sangli', 25)
+// person10.prototype.toString() = function(){
+//     return `Person {name:${this.name},Address:${this.address},Age:${this.age}}`
+// }
+
+const newperson = new person10('Ganesh','Sangli', 25)
+
 console.log(newperson);
 console.log(`${newperson}`); 
+

@@ -45,7 +45,6 @@ function  Greet(){
 
 Greet()
 
-
 // function with parameter
 
 function Add(a,b){
@@ -80,17 +79,12 @@ function Array_method(){
     // 2 => indicates the index number to start removing
     // 1 => indicates the how many numbers to remove from index number
 
-
-
 }
 Array_method()
-
-
 
 // for of
 
 let numbers = [11,22,33,44,55]
-
 
 for (const num of numbers) {
     console.log(num);
@@ -108,7 +102,6 @@ console.log(`-------------------------------------------------`);
 
 // for loop
 
-
 for (let index = 0; index < numbers.length; index++) {
     const element = numbers[index];
     console.log(element);
@@ -119,8 +112,6 @@ const square = (num) => console.log(num * num)
 
 square(25)
 
-
-
 function add(a){
     function add2 (b){
         console.log(a+b);
@@ -128,7 +119,6 @@ function add(a){
     add2(3)
 }
 add(3)
-
 
 function Greet(name){
     function message(){
@@ -165,7 +155,6 @@ function function6(){
     cars.map(i => console.log(i.company, i.name))
     
 }
-
 
 function6()
 
