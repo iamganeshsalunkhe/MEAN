@@ -1,18 +1,19 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-// Import all routes
+// Importing express
+const express = require('express')
 
-const routeProducts = require("./Routes/product");
+const bodyParser = require('body-parser')
 
-const app = express();
+// Import router
+const routerProduct = require('./Routes/product')
+
+const app = express()
 
 // for request body
+app.use(bodyParser.json())
 
-app.use(bodyParser.json());
+// add router to application server
+app.use(routerProduct)
 
-// Add router to the application server
-app.use(routeProducts);
-
-app.listen(3000, "localhost", () => {
-  console.log(`Server Started`);
-});
+app.listen(3000,'localhost',() =>{
+    console.log(`Server Started on 3000, Ganesh`);
+})
