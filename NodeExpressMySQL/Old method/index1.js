@@ -15,5 +15,5 @@ app.use(bodyParser.json())
 app.use(routerProduct)
 
 app.listen(3000,'localhost',() =>{
-    console.log(`Server Started on 3000, Ganesh`);
+    console.log(`Server Started on 3000`);
 })

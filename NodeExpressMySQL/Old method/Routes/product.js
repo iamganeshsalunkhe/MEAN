@@ -72,6 +72,65 @@ router.post('/product',(req,res) =>{
     })
 })
 
+router.put('/product/:id',(req,res) =>{
+    const id = req.params.id
+    const price = req.body.price
+    const title = req.body.title
+    const description = req.body.description
+    
+    // creare a connection
+    const connection = MySQL.createConnection({
+        host:'localhost',
+        user:'root',
+        password:'Ganesh@1498',
+        database:'mystore',
+        port:3306
+    })
+    // create a query
+    const statement = `update product set title = '${title}', description = '${description}',price = ${price} where id = ${id}`
 
+    // excuate a query
+    connection.query(statement,(err,data)=>{
+        if (err){
+            // if error occurs
+            console.log(`Err:${err}`);
+        }else{
+            // if error not occurs
+            console.log(data);
+        }
+        // close connection
+        connection.end()
+
+        res.send(data)
+    })
+})
+
+router.delete('/product/:id',(req,res) =>{
+    const id = req.params.id
+
+    // open connection
+    const connection = MySQL.createConnection({
+        host:'localhost',
+        user:'root',
+        password:'Ganesh@1498',
+        database:'mystore',
+        port:3306
+    })
+
+    // create a query 
+    const statement = `delete from product where id = ${id} `
+
+    // 
+    connection.query(statement,(err,data) =>{
+        if (err){
+            console.log(`Error:${err}`);
+        }else{
+            console.log(data);
+        }
+        connection.end()
+
+        res.send(data)
+    })
+})
 
 module.exports = router
