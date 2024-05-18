@@ -2,13 +2,13 @@ const express = require('express')
 
 const bodyParser = require('body-parser')
 const app = express()
+app.use(bodyParser.json())
 
 // routers 
 const userRouter = require('./Routes/user')
-
-app.use(bodyParser.json())
-
 app.use('/user',userRouter)
+
+
 
 
 app.get('/',(req,res) =>{
