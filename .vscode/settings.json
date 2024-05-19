@@ -10,7 +10,7 @@
             "port": 3306,
             "driver": "MySQL",
             "name": "MySQL1",
-            "database": "mystore",
+            "database": "notesapp",
             "username": "root"
         }
     ]
