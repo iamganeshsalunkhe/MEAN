@@ -27,5 +27,3 @@
 --     category_id int
 -- );
 
-
-SELECT * FROM user

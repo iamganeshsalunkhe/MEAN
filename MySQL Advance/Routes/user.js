@@ -1,10 +1,20 @@
 const express = require('express')
 
-// const crypto = require('crypto-js')
+const crypto = require('crypto-js')
 
 const db = require('../db')
 
 const router = express.Router()
+
+router.get('/signup',(req,res) =>{
+    const statement = `select * from user`
+
+    db.connection.query(statement,(err,data)=>{
+        console.log(data);
+        res.send(data)
+    })
+})
+
 router.post('/signup',(req,res) =>{
     const {firstName, lastName, email, password, adddress, phone} = req.body
 

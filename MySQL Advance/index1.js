@@ -6,9 +6,12 @@ app.use(bodyParser.json())
 
 // routers 
 const userRouter = require('./Routes/user')
+
+const categoryRouter = require('./Routes/category')
+
 app.use('/user',userRouter)
 
-
+app.use('/category',categoryRouter)
 
 
 app.get('/',(req,res) =>{
