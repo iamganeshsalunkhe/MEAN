@@ -7,6 +7,7 @@ const bodyParser = require('body-parser')
 const userRouter = require('./Routes/user')
 
 const noteRouter = require('./Routes/notes')
+const router = require('./Routes/notes')
 
 
 const app = express()
