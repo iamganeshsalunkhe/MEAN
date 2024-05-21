@@ -11,4 +11,4 @@
 -- DESCRIBE user
 
 -- UPDATE user SET active = 0 WHERE id = 1
-TRUNCATE TABLE user
+TRUNCATE TABLE notes

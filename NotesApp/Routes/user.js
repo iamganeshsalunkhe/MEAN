@@ -8,6 +8,8 @@ const utils = require('../utils')
 
 const crypto = require('crypto-js')
 
+const jwt = require('jsonwebtoken')
+
 const mailer = require('../mailer')
 
 const router = express.Router()
@@ -31,7 +33,6 @@ router.post('/signup',(req,res) =>{
         </div>
     </div>`
        mailer.sendEmail(email,body,(err,data) =>{
-
            const result = utils.createResult(err,data)
            res.send(result)
        })   
@@ -60,9 +61,17 @@ router.post('/signin',(req,res) =>{
                 if (user['active'] ==0){
                     result['status'] = 'error'
                     result['data'] = 'Your account is not active. Please activate your account by using link which is sent on your registered email.'
-                }else{
+                }else if (user['active'] == 1){
+                    
+                    const authToken = jwt.sign({id:user['id']}, '123883848hfhafkhsazf1323')
+
                     result['status'] = 'success'
-                    result['data'] = data
+                    result['data'] = {
+                        name:user['name'],
+                        address:user['address'],
+                        phone:user['phone'],
+                        authtoken:authToken
+                    }
                 }
             }
         }

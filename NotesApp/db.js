@@ -6,8 +6,8 @@ const pool = mySQL.createPool({
     password:'Ganesh@1498',
     database:'notesapp',
     port:3306,
-    connectionLimit:10,
     waitForConnection:true,
+    connectionLimit:10,
     queueLimit:0
 })
 
