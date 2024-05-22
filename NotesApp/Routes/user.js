@@ -99,5 +99,21 @@ router.get('/activate/:token',(req,res) =>{
     })
 })
 
+router.get('/profile',(req,res) =>{
+    const token = req.header['token']
+    try {
+        // verify the token
+        const data = jwt.verify(token, "123883848hfhafkhsazf1323");
+        console.log(data);
+        const statement = `select id, name, address, phone, email from user where id = '${data.id}'`
+        db.connection.query(statement,(err,data) =>{
+            res.send(utils.createResult(err,data))
+        })
+    } catch (error) {
+        res.status(401)
+        res.send(utils.createResult('Unauthorize access'))
+    }
+})
+
 
 module.exports = router
