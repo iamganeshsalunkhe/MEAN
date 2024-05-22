@@ -4,7 +4,7 @@ function sendEmail(email,body, callback){
     const transport = mailer.createTransport({
       service: "gmail",
       auth: {
-        user: "ganusalunkhe1998@gmail.com",
+        user: "",
         pass: "ntkn mdxc fivo ihub",
       },
     });

@@ -63,7 +63,7 @@ router.post('/signin',(req,res) =>{
                     result['data'] = 'Your account is not active. Please activate your account by using link which is sent on your registered email.'
                 }else if (user['active'] == 1){
                     
-                    const authToken = jwt.sign({id:user['id']}, '123883848hfhafkhsazf1323')
+                    const authToken = jwt.sign({id:user['id']}, '')
 
                     result['status'] = 'success'
                     result['data'] = {
